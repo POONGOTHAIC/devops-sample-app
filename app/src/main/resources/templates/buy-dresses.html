@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Buy Dresses</title>
+</head>
+<body>
+    <h2>Buy Dresses</h2>
+
+    <form action="#" th:action="@{/buy-dresses}" method="post">
+        <label for="dress">Select a dress:</label>
+        <select name="dressName" id="dress">
+            <option th:each="dress : ${dresses}" th:value="${dress.name}" th:text="${dress.name}">Dress</option>
+        </select>
+        <button type="submit">Buy</button>
+    </form>
+
+    <p th:text="${message}"></p>
+
+    <br>
+    <a th:href="@{/dashboard}">Back to Dashboard</a>
+</body>
+</html>
