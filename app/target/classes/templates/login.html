@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dress Shop Login</title>
+</head>
+<body>
+<h2>Welcome - Login or Sign Up</h2>
+
+<!-- Display error message if any -->
+<p th:if="${error}" th:text="${error}" style="color: red;"></p>
+
+<form th:action="@{/login}" method="post">
+    <div>
+        <label>Username:</label>
+        <input type="text" name="username" required />
+    </div>
+
+    <div>
+        <label>Password:</label>
+        <input type="password" name="password" required />
+    </div>
+
+    <div>
+        <label>Select Role:</label>
+        <select name="role">
+            <option value="user">User</option>
+            <option value="admin">Admin</option>
+            <option value="register">Register</option>
+        </select>
+    </div>
+
+    <button type="submit">Submit</button>
+</form>
+
+</body>
+</html>

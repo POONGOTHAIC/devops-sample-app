@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Post Login</title>
+</head>
+<body>
+    <h2>Welcome, <span th:text="${username}"></span>!</h2>
+
+    <p>Select an option:</p>
+    <ul>
+        <li><a th:href="@{/view-dresses}">View Dresses</a></li>
+        <li><a th:href="@{/buy-dresses}">Buy Dresses</a></li>
+    </ul>
+</body>
+</html>

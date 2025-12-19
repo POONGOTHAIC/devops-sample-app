@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>View Dresses</title>
+</head>
+<body>
+    <h2>Available Dresses</h2>
+
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Size</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        <tr th:each="dress : ${dresses}">
+            <td th:text="${dress.name}">Name</td>
+            <td th:text="${dress.size}">Size</td>
+            <td th:text="${dress.price}">Price</td>
+            <td><a th:href="@{/buy-dresses}">Buy</a></td>
+        </tr>
+    </table>
+
+    <br>
+    <a th:href="@{/dashboard}">Back to Dashboard</a>
+</body>
+</html>
